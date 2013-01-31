@@ -7,10 +7,12 @@
 <div class="container pretty" id="index">
   <header>
     <h1>
-      Represent, by
+      Represent<h1>
+      <h2>Database & API of Canadian Elected Officials and Electoral Boundaries<br>
+      <h2>built by
       <a href="http://opennorth.ca/"><img src="{{ STATIC_URL }}img/opennorth_logo.png" alt="" width="90" height="90"></a>
       <a href="http://opennorth.ca/">Open North</a>
-    </h1>
+     </h2>
   </header>
 
   <form id="form" class="form-inline">
@@ -45,15 +47,50 @@
   <section id="coverage">
     <h2>The most comprehensive database of Canadian elected officials</h2>
 
-    <p>Represent includes all Members of Parliament, all members of provincial legislatures, and municipal elected officials for <strong id="progress">{{ representative_progress }}%</strong> of the Canadian population, making it the <strong>most comprehensive</strong> database of its kind. It has all federal and provincial electoral boundaries, and municipal ward boundaries for <strong>{{ boundary_progress }}%</strong> of the population. <a href="http://opennorth.ca/donate/">Help us get to 100%.</a></p>
+    <p>Represent includes all Members of Parliament, all members of provincial legislatures, and municipal elected officials for <strong id="progress">{{ representative_progress }}%</strong> of the Canadian population. It is <strong>the most comprehensive</strong> database of its kind. It has all federal and provincial electoral boundaries, and municipal ward boundaries for <strong>{{ boundary_progress }}%</strong> of the population. <br> <a href="http://opennorth.ca/donate/">Help us get to 100% by volunteering to scrape data or collect new boundaries.</a></p>
+  </section>
+  
+  <hr class="soften">
 
-    <div id="notice" class="alert alert-info">
-      <strong>Developers:</strong>
-      Consult the <a href="{% url datasummary %}">list of boundary and representative sets</a> available, along with sample responses of API calls.
+  <section id="coverage">
+    <h2>How you can use Represent</h2>
+    <p>From running advocacy campaigns to making legislative information more accessible, organizations use Represent to match postal codes and addresses to electoral districts and elected official contact information. To learn more about how specific civil society organizations use Represent, <a href="http://blog.opennorth.ca">check out our blog</a>. There are many ways you can benefit from Represent's resources. Here are some suggestions:<p>
+
+<div class="row grid">
+    <div class="span3">
+      <h2>On your website</h2>
+      <p>You can set up your own instance of Represent using our API. For example, <a href="http://www.citizenbridge.org">Citizen Bridge</a> uses the API to display riding maps on their website and the "ridings to postal code" data to sign-up users. Instructions are available in the <a href="{% url apidoc %}">documentation</a> and Open North is <a href="mailto:represent@opennorth.ca">here to help!</a></p>
     </div>
+    <div class="span3">
+      <h2>In a campaign</h2>
+      <p>Advocacy groups can access accurate information about Canadian representatives based on the postal code or address of their supporters and unlike other postal code lookup services, Represent is completely free and <a href="https://github.com/opennorth/represent-canada">open source</a>. For example, we helped <a href="http://environmentaldefense.ca/">Environment Defense</a> directly integrate Represent into their online forms so that when a supporter joins their letter-writing campaign, it is automatically sent to the correct representative. To facilitate this type of integration, Open North and its volunteers have created <a href="http://blog.opennorth.ca/2013/01/28/drupal-modules/">two Drupal Modules</a>, for <a href="http://drupal.org/project/webform_represent">Webforms</a> and <a href"http://drupal.org/project/civinorth">CiviCRM users.</a></p>
+    </div>
+    <div class="span3">
+      <h2>Develop a new app</h2>
+      <p>The Represent database and API can be used to create lots of new apps like the Windows Phone app, <a href="http://www.windowsphone.com/en-us/store/app/my-representatives/2da50757-efad-4e57-ad04-1154ef7000a7">MyRepresentatives</a>, which tracks the activity of MPs in Parliament. If you are interested in using Represent and want to set up a private instance of the service to ensure your project has reliable access to the server, <a href="mailto:represent@opennorth.ca">contact Open North</a> to discuss Service Level Agreements.</p>
+    </div>
+  </div>
   </section>
 
   <hr class="soften">
+
+  <section id="users">
+    <h2>Groups that use and rely on Represent</h2>
+
+    <ul class="unstyled">
+      <li><a href="http://citizensconnected.com/"><img src="/static/img/citizensconnected.png" width="111" height="35" alt="Citizens Connected"></a></li>
+      <li><a href="http://davidsuzuki.org/"><img src="/static/img/davidsuzuki.png" width="124" height="50" alt="David Suzuki Foundation"></a></li>
+      <li><a href="http://civic.ca/"><img src="/static/img/civic.png" width="153" height="30" alt="Civic.ca"></a></li>
+      <li><a href="http://citizenbridge.org/"><img src="/static/img/citizenbridge.png" width="162" height="50" alt="Citizen Bridge"></a></li>
+      <li><a href="http://makethemworkforyou.com/"><img src="/static/img/makethemworkforyou.png" width="86" height="50" alt="Make Them Work For You Ltd"></a></li>
+      <li><a href="http://nextparliament.ca/"><img src="/static/img/nextparliament.png" width="38" height="30" alt="Next Parliament"></a></li>
+      <li><a href="http://www.taxfairness.ca/"><img src="{{ STATIC_URL }}img/taxfairness.png" height="50" alt="Canadians for Tax Fairness"></a></li>
+      <li><a href="http://www.fairvote.ca/"><img src="{{ STATIC_URL }}img/fairvote.png" height="50" alt="Fair Vote Canada"></a></li>
+    </ul>
+
+  </section>
+
+ <hr class="soften">
 
   <div class="row grid">
     <div class="span3">
@@ -72,26 +109,12 @@
       <h2>Contact us</h2>
       <p><a href="mailto:represent@opennorth.ca">represent@opennorth.ca</a></p>
     </div>
+     <div id="notice" class="alert alert-info">
+      <strong>Developers:</strong>
+      Consult the <a href="{% url datasummary %}">list of boundary and representative sets</a> available, along with sample responses of API calls.
+    </div>
   </div>
 
-  <hr class="soften">
-
-  <section id="users">
-    <h2>Groups that use and rely on Represent</h2>
-
-    <ul class="unstyled">
-      <li><a href="http://citizensconnected.com/"><img src="/static/img/citizensconnected.png" width="111" height="35" alt="Citizens Connected"></a></li>
-      <li><a href="http://davidsuzuki.org/"><img src="/static/img/davidsuzuki.png" width="124" height="50" alt="David Suzuki Foundation"></a></li>
-      <li><a href="http://civic.ca/"><img src="/static/img/civic.png" width="153" height="30" alt="Civic.ca"></a></li>
-      <li><a href="http://citizenbridge.org/"><img src="/static/img/citizenbridge.png" width="162" height="50" alt="Citizen Bridge"></a></li>
-      <li><a href="http://makethemworkforyou.com/"><img src="/static/img/makethemworkforyou.png" width="86" height="50" alt="Make Them Work For You Ltd"></a></li>
-      <li><a href="http://nextparliament.ca/"><img src="/static/img/nextparliament.png" width="38" height="30" alt="Next Parliament"></a></li>
-      <li><a href="http://www.taxfairness.ca/"><img src="{{ STATIC_URL }}img/taxfairness.png" height="50" alt="Canadians for Tax Fairness"></a></li>
-      <li><a href="http://www.fairvote.ca/"><img src="{{ STATIC_URL }}img/fairvote.png" height="50" alt="Fair Vote Canada"></a></li>
-    </ul>
-
-    <p>From running advocacy campaigns to making legislative information more accessible, organizations <a href="{%url apidoc %}">use our API</a> to match postal codes and addresses to electoral districts and elected official contact information.</p>
-  </section>
 
   <hr class="soften">
 
